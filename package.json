@@ -1,6 +1,6 @@
 {
-  "name": "material-ui-cra-ts",
-  "version": "5.0.0",
+  "name": "eric-demo-react",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.3",
