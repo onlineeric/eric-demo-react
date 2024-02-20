@@ -9,9 +9,9 @@ const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement!);
 
 root.render(
-  <ThemeProvider theme={getTheme('dark')}>
-    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-    <CssBaseline />
-    <App />
-  </ThemeProvider>,
+	<ThemeProvider theme={getTheme('dark')}>
+		{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+		<CssBaseline />
+		<App />
+	</ThemeProvider>,
 );
