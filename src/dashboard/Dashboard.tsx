@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { styled, ThemeProvider } from '@mui/material/styles';
+import { styled, SxProps, Theme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
+import Typography, { TypographyProps } from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
@@ -23,7 +23,11 @@ import Deposits from './Deposits';
 import Orders from './Orders';
 import { useTheme } from '@emotion/react';
 
-function Copyright(props: any) {
+interface CopyrightProps extends TypographyProps {
+	sx?: SxProps<Theme>;
+}
+
+function Copyright(props: CopyrightProps) {
 	return (
 		<Typography variant="body2" color="text.secondary" align="center" {...props}>
 			{'Copyright © '}
