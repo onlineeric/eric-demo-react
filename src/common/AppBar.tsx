@@ -5,23 +5,22 @@ import { Badge, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
-interface AppBarProps extends MuiAppBarProps {
-	open?: boolean;
-	toggleDrawer: () => void;
-	drawerWidth: number;
+interface StyledAppBarProps extends MuiAppBarProps {
+	open: boolean;
+	drawerwidth: number;
 }
 
 const StyledAppBar = styled(MuiAppBar, {
 	shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme, open, drawerWidth }) => ({
+})<StyledAppBarProps>(({ theme, open, drawerwidth }) => ({
 	zIndex: theme.zIndex.drawer + 1,
 	transition: theme.transitions.create(['width', 'margin'], {
 		easing: theme.transitions.easing.sharp,
 		duration: theme.transitions.duration.leavingScreen,
 	}),
 	...(open && {
-		marginLeft: drawerWidth,
-		width: `calc(100% - ${drawerWidth}px)`,
+		marginLeft: drawerwidth,
+		width: `calc(100% - ${drawerwidth}px)`,
 		transition: theme.transitions.create(['width', 'margin'], {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.enteringScreen,
@@ -29,9 +28,13 @@ const StyledAppBar = styled(MuiAppBar, {
 	}),
 }));
 
-export default function AppBar({ open, toggleDrawer, drawerWidth }: AppBarProps) {
+interface AppBarProps extends StyledAppBarProps {
+	toggleDrawer: () => void;
+}
+
+export default function AppBar({ open, drawerwidth, toggleDrawer }: AppBarProps) {
 	return (
-		<StyledAppBar position="absolute" open={open} toggleDrawer={toggleDrawer} drawerWidth={drawerWidth}>
+		<StyledAppBar position="absolute" open={open} drawerwidth={drawerwidth}>
 			<Toolbar
 				sx={{
 					pr: '24px', // keep right padding when drawer closed
