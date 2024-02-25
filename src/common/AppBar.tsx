@@ -30,9 +30,10 @@ const StyledAppBar = styled(MuiAppBar, {
 
 interface AppBarProps extends StyledAppBarProps {
 	toggleDrawer: () => void;
+	title?: string;
 }
 
-export default function AppBar({ open, drawerwidth, toggleDrawer }: AppBarProps) {
+export default function AppBar({ open, drawerwidth, toggleDrawer, title }: AppBarProps) {
 	return (
 		<StyledAppBar position="absolute" open={open} drawerwidth={drawerwidth}>
 			<Toolbar
@@ -53,7 +54,7 @@ export default function AppBar({ open, drawerwidth, toggleDrawer }: AppBarProps)
 					<MenuIcon />
 				</IconButton>
 				<Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-					Dashboard
+					{title}
 				</Typography>
 				<IconButton color="inherit">
 					<Badge badgeContent={4} color="secondary">

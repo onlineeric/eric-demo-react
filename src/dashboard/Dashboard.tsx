@@ -25,7 +25,7 @@ export default function Dashboard() {
 	return (
 		<ThemeProvider theme={defaultTheme}>
 			<Box sx={{ display: 'flex' }}>
-				<AppBar open={open} drawerwidth={drawerWidth} toggleDrawer={toggleDrawer} />
+				<AppBar open={open} drawerwidth={drawerWidth} toggleDrawer={toggleDrawer} title={'Dashboard Home'} />
 				<SideDrawer open={open} drawerwidth={drawerWidth} toggleDrawer={toggleDrawer} />
 				<Box
 					component="main"
