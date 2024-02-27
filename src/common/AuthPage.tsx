@@ -7,8 +7,8 @@ import { useTheme } from '@emotion/react';
 import Copyright from '../common/Copyright';
 import AppBar from '../common/AppBar';
 import SideDrawer from '../common/SideDrawer';
-import Dashboard from '../dashboard/Dashboard';
-import { Navigate, useLocation, useRoutes } from 'react-router-dom';
+import { useLocation, useRoutes } from 'react-router-dom';
+import { routeTitles, routes } from './routes';
 
 const drawerWidth: number = 240;
 
@@ -18,18 +18,10 @@ export default function AuthPage() {
 		setOpen(!open);
 	};
 	const defaultTheme = useTheme();
-
-	const routes = [
-		{ path: '/home', element: <Dashboard />, title: 'Dashboard Home' },
-		{ path: '/status', element: <div>status page</div>, title: 'Status' },
-		{ path: '*', element: <Navigate to="/home" replace /> },
-	];
+	const currentPath = useLocation().pathname;
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- to remove title from routes
 	const routesObjects = useRoutes(routes.map(({ title, ...route }) => route));
-
-	const currentPath = useLocation().pathname;
-	const routeTitles = Object.fromEntries(routes.map(({ path, title }) => [path, title]));
 
 	return (
 		<ThemeProvider theme={defaultTheme}>

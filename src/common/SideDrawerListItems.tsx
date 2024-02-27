@@ -11,7 +11,7 @@ import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
 const mainListItemsData = [
-	{ icon: DashboardIcon, text: 'Dashboard' },
+	{ icon: DashboardIcon, text: 'Dashboard', route: '/home' },
 	{ icon: ShoppingCartIcon, text: 'Orders' },
 	{ icon: PeopleIcon, text: 'Customers' },
 	{ icon: BarChartIcon, text: 'Reports' },
