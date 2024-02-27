@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Divider, IconButton, styled, Drawer as MuiDrawer, DrawerProps, Toolbar } from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems, secondaryListItems } from './SideDrawerListItems';
+import { MainListItems, SecondaryListItems } from './SideDrawerListItems';
 
 interface StyledDrawerProps extends DrawerProps {
 	open: boolean;
@@ -55,9 +55,9 @@ export default function SideDrawer({ open, drawerwidth, toggleDrawer }: SideDraw
 			</Toolbar>
 			<Divider />
 			<List component="nav">
-				{mainListItems}
+				<MainListItems />
 				<Divider sx={{ my: 1 }} />
-				{secondaryListItems}
+				<SecondaryListItems />
 			</List>
 		</Drawer>
 	);

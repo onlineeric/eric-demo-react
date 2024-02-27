@@ -9,46 +9,65 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import { useNavigate } from 'react-router-dom';
 
 const mainListItemsData = [
 	{ icon: DashboardIcon, text: 'Dashboard', route: '/home' },
-	{ icon: ShoppingCartIcon, text: 'Orders' },
+	{ icon: ShoppingCartIcon, text: 'Orders', route: '/orders' },
 	{ icon: PeopleIcon, text: 'Customers' },
 	{ icon: BarChartIcon, text: 'Reports' },
 	{ icon: LayersIcon, text: 'Integrations' },
 ];
 
 const secondaryListItemsData = [
-	{ icon: AssignmentIcon, text: 'Current month' },
+	{ icon: AssignmentIcon, text: 'Current month', route: '/current-month' },
 	{ icon: AssignmentIcon, text: 'Last quarter' },
 	{ icon: AssignmentIcon, text: 'Year-end sale' },
 ];
 
-export const mainListItems = (
-	<React.Fragment>
-		{mainListItemsData.map((item, index) => (
-			<ListItemButton key={index}>
-				<ListItemIcon>
-					<item.icon />
-				</ListItemIcon>
-				<ListItemText primary={item.text} />
-			</ListItemButton>
-		))}
-	</React.Fragment>
-);
+export const MainListItems = () => {
+	const navigate = useNavigate();
+	const handleItemClick = (route: string | undefined) => {
+		if (route) {
+			navigate(route);
+		}
+	};
 
-export const secondaryListItems = (
-	<React.Fragment>
-		<ListSubheader component="div" inset>
-			Saved reports
-		</ListSubheader>
-		{secondaryListItemsData.map((item, index) => (
-			<ListItemButton key={index}>
-				<ListItemIcon>
-					<item.icon />
-				</ListItemIcon>
-				<ListItemText primary={item.text} />
-			</ListItemButton>
-		))}
-	</React.Fragment>
-);
+	return (
+		<React.Fragment>
+			{mainListItemsData.map((item, index) => (
+				<ListItemButton key={index} onClick={() => handleItemClick(item.route)}>
+					<ListItemIcon>
+						<item.icon />
+					</ListItemIcon>
+					<ListItemText primary={item.text} />
+				</ListItemButton>
+			))}
+		</React.Fragment>
+	);
+};
+
+export const SecondaryListItems = () => {
+	const navigate = useNavigate();
+	const handleItemClick = (route: string | undefined) => {
+		if (route) {
+			navigate(route);
+		}
+	};
+
+	return (
+		<React.Fragment>
+			<ListSubheader component="div" inset>
+				Saved reports
+			</ListSubheader>
+			{secondaryListItemsData.map((item, index) => (
+				<ListItemButton key={index} onClick={() => handleItemClick(item.route)}>
+					<ListItemIcon>
+						<item.icon />
+					</ListItemIcon>
+					<ListItemText primary={item.text} />
+				</ListItemButton>
+			))}
+		</React.Fragment>
+	);
+};
