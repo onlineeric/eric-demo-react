@@ -24,7 +24,7 @@ function preventDefault(event: React.MouseEvent) {
 	event.preventDefault();
 }
 
-export default function Orders() {
+export default function RecentOrders() {
 	return (
 		<React.Fragment>
 			<Title>Recent Orders</Title>
