@@ -5,24 +5,18 @@ import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import PeopleIcon from '@mui/icons-material/People';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import LoginIcon from '@mui/icons-material/Login';
 import { useNavigate } from 'react-router-dom';
 
 const mainListItemsData = [
 	{ icon: DashboardIcon, text: 'Dashboard', route: '/home' },
 	{ icon: ShoppingCartIcon, text: 'Orders', route: '/orders' },
-	{ icon: PeopleIcon, text: 'Customers' },
-	{ icon: BarChartIcon, text: 'Reports' },
-	{ icon: LayersIcon, text: 'Integrations' },
 ];
 
 const secondaryListItemsData = [
-	{ icon: AssignmentIcon, text: 'Current month', route: '/current-month' },
-	{ icon: AssignmentIcon, text: 'Last quarter' },
-	{ icon: AssignmentIcon, text: 'Year-end sale' },
+	{ icon: DashboardIcon, text: 'Dashboard', route: '/home' },
+	{ icon: ShoppingCartIcon, text: 'Orders', route: '/orders' },
+	{ icon: LoginIcon, text: 'Login', route: '/login' },
 ];
 
 export const MainListItems = () => {
@@ -58,7 +52,7 @@ export const SecondaryListItems = () => {
 	return (
 		<React.Fragment>
 			<ListSubheader component="div" inset>
-				Saved reports
+				Simple pages
 			</ListSubheader>
 			{secondaryListItemsData.map((item, index) => (
 				<ListItemButton key={index} onClick={() => handleItemClick(item.route)}>
