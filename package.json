@@ -9,13 +9,17 @@
 		"@mui/material": "^5.15.7",
 		"@mui/x-charts": "^6.19.3",
 		"@mui/x-data-grid": "^6.19.5",
+		"@reduxjs/toolkit": "^2.2.1",
 		"@types/react": "latest",
 		"@types/react-dom": "latest",
+		"@types/react-redux": "^7.1.33",
 		"react": "latest",
 		"react-dom": "latest",
+		"react-redux": "^9.1.0",
 		"react-router-dom": "^6.22.1",
 		"react-scripts": "latest",
 		"recharts": "^2.11.0",
+		"redux": "^5.0.1",
 		"typescript": "latest"
 	},
 	"scripts": {
