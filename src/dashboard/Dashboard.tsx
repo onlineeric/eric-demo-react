@@ -4,6 +4,7 @@ import Paper from '@mui/material/Paper';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import RecentOrders from './RecentOrders';
+import Counter from './Counter';
 
 export default function Dashboard() {
 	return (
@@ -38,6 +39,12 @@ export default function Dashboard() {
 			<Grid item xs={12}>
 				<Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
 					<RecentOrders />
+				</Paper>
+			</Grid>
+			{/* Counter */}
+			<Grid item xs={12}>
+				<Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+					<Counter />
 				</Paper>
 			</Grid>
 		</Grid>
