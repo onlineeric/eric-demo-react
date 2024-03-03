@@ -19,16 +19,16 @@ export const loginSlice = createSlice({
 			state.loggedIn = false;
 			state.loginName = '';
 		},
-		logOn: (state, action: PayloadAction<string>) => {
+		logIn: (state, action: PayloadAction<string>) => {
 			state.loggedIn = true;
 			state.loginName = action.payload;
 		},
 	},
 });
 
-export const { logOff, logOn } = loginSlice.actions;
+export const { logOff, logIn } = loginSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const IsLoggedOn = (state: RootState) => state.login.loggedIn;
+export const IsLoggedIn = (state: RootState) => state.login.loggedIn;
 
 export default loginSlice.reducer;

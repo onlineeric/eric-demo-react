@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AuthPage from './common/AuthPage';
+import { useAppSelector } from './store/hooks';
+import { IsLoggedIn } from './store/loginSlice';
 
 export default function App() {
-	const [loggedIn] = useState(true); // todo: implement login and Redux
+	const loggedIn = useAppSelector(IsLoggedIn);
 
 	return <>{loggedIn ? <AuthPage /> : <div>Need to implement login page</div>}</>;
 }
