@@ -14,9 +14,12 @@ import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
 import Copyright from '../common/Copyright';
 import { useTheme } from '@emotion/react';
+import { useAppDispatch } from '../store/hooks';
+import { logIn } from '../store/loginSlice';
 
 export default function SignIn() {
 	const theme = useTheme();
+	const dispatch = useAppDispatch();
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		const data = new FormData(event.currentTarget);
@@ -24,6 +27,7 @@ export default function SignIn() {
 			email: data.get('email'),
 			password: data.get('password'),
 		});
+		dispatch(logIn(data.get('email') as string));
 	};
 
 	return (
