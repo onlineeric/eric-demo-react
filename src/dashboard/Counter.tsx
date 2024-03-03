@@ -3,11 +3,11 @@ import Typography from '@mui/material/Typography';
 import Title from './Title';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { Button, TextField } from '@mui/material';
-import { decrement, increment, incrementByAmount } from '../store/counterSlice';
+import { decrement, increment, incrementByAmount, selectCount } from '../store/counterSlice';
 
 export default function Counter() {
 	// The `state` arg is correctly typed as `RootState` already
-	const count = useAppSelector((state) => state.counter.value);
+	const count = useAppSelector(selectCount);
 	const dispatch = useAppDispatch();
 	const [incrementAmount, setIncrementAmount] = React.useState(0);
 
