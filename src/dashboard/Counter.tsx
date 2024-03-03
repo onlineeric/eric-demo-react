@@ -1,19 +1,15 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Title from './Title';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
-import { Button } from '@mui/material';
-// import { decrement, increment } from '../store/counterSlice';
-
-function preventDefault(event: React.MouseEvent) {
-	event.preventDefault();
-}
+import { Button, TextField } from '@mui/material';
+import { decrement, increment, incrementByAmount } from '../store/counterSlice';
 
 export default function Counter() {
 	// The `state` arg is correctly typed as `RootState` already
 	const count = useAppSelector((state) => state.counter.value);
 	const dispatch = useAppDispatch();
+	const [incrementAmount, setIncrementAmount] = React.useState(0);
 
 	return (
 		<React.Fragment>
@@ -22,14 +18,14 @@ export default function Counter() {
 				{count}
 			</Typography>
 			<Typography color="text.secondary" sx={{ flex: 1 }}>
-				on 15 March, 2019
+				Click below buttons to change the counter
 			</Typography>
 			<div>
-				<Link color="primary" href="#" onClick={preventDefault}>
-					View balance
-				</Link>
+				<Button onClick={() => dispatch(increment())}>Increment</Button>
+				<Button onClick={() => dispatch(decrement())}>Decrement</Button>
+				<Button onClick={() => dispatch(incrementByAmount(incrementAmount))}>Increase by amount:</Button>
+				<TextField type="number" onChange={(e) => setIncrementAmount(Number(e.target.value))} />
 			</div>
-			<Button onClick={() => dispatch({ type: 'counter/increment' })}>Increment</Button>
 		</React.Fragment>
 	);
 }
