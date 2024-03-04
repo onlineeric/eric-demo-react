@@ -8,7 +8,7 @@ import Copyright from '../common/Copyright';
 import AppBar from '../common/AppBar';
 import SideDrawer from '../common/SideDrawer';
 import { useLocation, useRoutes } from 'react-router-dom';
-import { routeTitles, useRoutesObjects } from './routes';
+import { authRouteTitles, useAuthRoutesObjs } from './routes';
 
 const drawerWidth: number = 240;
 
@@ -20,12 +20,17 @@ export default function AuthPage() {
 	const defaultTheme = useTheme();
 	const currentPath = useLocation().pathname;
 
-	const routesObjects = useRoutes(useRoutesObjects);
+	const routesObjects = useRoutes(useAuthRoutesObjs);
 
 	return (
 		<ThemeProvider theme={defaultTheme}>
 			<Box sx={{ display: 'flex' }}>
-				<AppBar open={open} drawerwidth={drawerWidth} toggleDrawer={toggleDrawer} title={routeTitles[currentPath]} />
+				<AppBar
+					open={open}
+					drawerwidth={drawerWidth}
+					toggleDrawer={toggleDrawer}
+					title={authRouteTitles[currentPath]}
+				/>
 				<SideDrawer open={open} drawerwidth={drawerWidth} toggleDrawer={toggleDrawer} />
 				<Box
 					component="main"

@@ -16,14 +16,21 @@ const Logoff = () => {
 	return <div>Logging off...</div>;
 };
 
-export const routes = [
+export const authRoutes = [
 	{ path: '/home', element: <Dashboard />, title: 'Dashboard Home' },
 	{ path: '/orders', element: <Orders />, title: 'Orders' },
-	{ path: '/login', element: <Logoff />, title: 'Login' },
 	{ path: '/status', element: <div>status page</div>, title: 'Status' },
 	{ path: '*', element: <Navigate to="/home" replace /> },
 ];
 
-export const useRoutesObjects = routes.map(({ path, element }) => ({ path, element }));
+export const notAuthRoutes = [
+	{ path: '/login', element: <Logoff />, title: 'Login' },
+	{ path: '/status', element: <div>status page</div>, title: 'Status' },
+	{ path: '*', element: <Navigate to="/login" replace /> },
+];
 
-export const routeTitles = Object.fromEntries(routes.map(({ path, title }) => [path, title]));
+export const useAuthRoutesObjs = authRoutes.map(({ path, element }) => ({ path, element }));
+export const useNotAuthRoutesObjs = notAuthRoutes.map(({ path, element }) => ({ path, element }));
+
+export const authRouteTitles = Object.fromEntries(authRoutes.map(({ path, title }) => [path, title]));
+export const notAuthRouteTitles = Object.fromEntries(notAuthRoutes.map(({ path, title }) => [path, title]));
