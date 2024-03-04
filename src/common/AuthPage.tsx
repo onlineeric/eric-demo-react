@@ -8,7 +8,7 @@ import Copyright from '../common/Copyright';
 import AppBar from '../common/AppBar';
 import SideDrawer from '../common/SideDrawer';
 import { useLocation, useRoutes } from 'react-router-dom';
-import { routeTitles, routes } from './routes';
+import { routeTitles, useRoutesObjects } from './routes';
 
 const drawerWidth: number = 240;
 
@@ -20,8 +20,7 @@ export default function AuthPage() {
 	const defaultTheme = useTheme();
 	const currentPath = useLocation().pathname;
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- to remove title from routes
-	const routesObjects = useRoutes(routes.map(({ title, ...route }) => route));
+	const routesObjects = useRoutes(useRoutesObjects);
 
 	return (
 		<ThemeProvider theme={defaultTheme}>

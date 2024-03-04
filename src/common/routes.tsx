@@ -24,4 +24,6 @@ export const routes = [
 	{ path: '*', element: <Navigate to="/home" replace /> },
 ];
 
+export const useRoutesObjects = routes.map(({ path, element }) => ({ path, element }));
+
 export const routeTitles = Object.fromEntries(routes.map(({ path, title }) => [path, title]));
