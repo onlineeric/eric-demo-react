@@ -1,6 +1,9 @@
 import React from 'react';
-import SignIn from '../login/SignIn';
+import { useRoutes } from 'react-router-dom';
+import { useNotAuthRoutesObjs } from './routes';
 
 export default function NotAuthPage() {
-	return <SignIn />;
+	const routesObjects = useRoutes(useNotAuthRoutesObjs);
+
+	return <>{routesObjects}</>;
 }

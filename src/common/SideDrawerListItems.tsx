@@ -16,7 +16,7 @@ const mainListItemsData = [
 const secondaryListItemsData = [
 	{ icon: DashboardIcon, text: 'Dashboard', route: '/home' },
 	{ icon: ShoppingCartIcon, text: 'Orders', route: '/orders' },
-	{ icon: LoginIcon, text: 'Login', route: '/login' },
+	{ icon: LoginIcon, text: 'Login', route: '/logoff' },
 ];
 
 export const MainListItems = () => {

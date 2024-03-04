@@ -4,12 +4,12 @@ import Orders from '../orders/Orders';
 import { Navigate } from 'react-router-dom';
 import { useAppDispatch } from '../store/hooks';
 import { logOff } from '../store/loginSlice';
+import SignIn from '../login/SignIn';
 
 // Logoff component
 const Logoff = () => {
 	const dispatch = useAppDispatch();
 	useEffect(() => {
-		console.log('Logoff action');
 		dispatch(logOff());
 	}, []);
 
@@ -20,11 +20,12 @@ export const authRoutes = [
 	{ path: '/home', element: <Dashboard />, title: 'Dashboard Home' },
 	{ path: '/orders', element: <Orders />, title: 'Orders' },
 	{ path: '/status', element: <div>status page</div>, title: 'Status' },
+	{ path: '/logoff', element: <Logoff />, title: 'Login' },
 	{ path: '*', element: <Navigate to="/home" replace /> },
 ];
 
 export const notAuthRoutes = [
-	{ path: '/login', element: <Logoff />, title: 'Login' },
+	{ path: '/login', element: <SignIn />, title: 'Login' },
 	{ path: '/status', element: <div>status page</div>, title: 'Status' },
 	{ path: '*', element: <Navigate to="/login" replace /> },
 ];
