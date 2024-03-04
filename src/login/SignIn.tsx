@@ -27,7 +27,17 @@ export default function SignIn() {
 			email: data.get('email'),
 			password: data.get('password'),
 		});
-		dispatch(logIn(data.get('email') as string));
+		handleLogin(data);
+	};
+
+	const handleLogin = (data: FormData) => {
+		// todo: change this logic to check actual credentials
+		let email = data.get('email') as string | null;
+		if (!email) {
+			email = 'Eric'; // just for testing
+		}
+
+		dispatch(logIn(email));
 	};
 
 	return (
