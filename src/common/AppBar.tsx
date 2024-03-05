@@ -4,6 +4,10 @@ import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { Badge, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { getThemeMode, darkMode, toggleThemeMode } from '../store/themeSlice';
 
 interface StyledAppBarProps extends MuiAppBarProps {
 	open: boolean;
@@ -34,6 +38,9 @@ interface AppBarProps extends StyledAppBarProps {
 }
 
 export default function AppBar({ open, drawerwidth, toggleDrawer, title }: AppBarProps) {
+	const themeMode = useAppSelector(getThemeMode);
+	const dispatch = useAppDispatch();
+
 	return (
 		<StyledAppBar position="absolute" open={open} drawerwidth={drawerwidth}>
 			<Toolbar
@@ -60,6 +67,9 @@ export default function AppBar({ open, drawerwidth, toggleDrawer, title }: AppBa
 					<Badge badgeContent={4} color="secondary">
 						<NotificationsIcon />
 					</Badge>
+				</IconButton>
+				<IconButton color="inherit" onClick={() => dispatch(toggleThemeMode())}>
+					{themeMode === darkMode ? <LightModeIcon /> : <DarkModeIcon />}
 				</IconButton>
 			</Toolbar>
 		</StyledAppBar>
