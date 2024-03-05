@@ -7,18 +7,30 @@ import App from './App';
 import getTheme from './getTheme';
 import store from './store/store';
 import { Provider } from 'react-redux';
+import { useAppSelector } from './store/hooks';
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement!);
 
-root.render(
-	<Provider store={store}>
-		<ThemeProvider theme={getTheme('dark')}>
-			{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+const WrappedApp = () => {
+	return (
+		<Provider store={store}>
+			<ThemedApp />
+		</Provider>
+	);
+};
+
+const ThemedApp = () => {
+	const themeMode = useAppSelector((state) => state.theme.mode);
+
+	return (
+		<ThemeProvider theme={getTheme(themeMode)}>
 			<CssBaseline />
 			<Router>
 				<App />
 			</Router>
 		</ThemeProvider>
-	</Provider>,
-);
+	);
+};
+
+root.render(<WrappedApp />);
