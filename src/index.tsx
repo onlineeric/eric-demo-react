@@ -8,6 +8,7 @@ import getTheme from './getTheme';
 import store from './store/store';
 import { Provider } from 'react-redux';
 import { useAppSelector } from './store/hooks';
+import { getThemeMode } from './store/themeSlice';
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement!);
@@ -21,7 +22,7 @@ const WrappedApp = () => {
 };
 
 const ThemedApp = () => {
-	const themeMode = useAppSelector((state) => state.theme.mode);
+	const themeMode = useAppSelector(getThemeMode);
 
 	return (
 		<ThemeProvider theme={getTheme(themeMode)}>
