@@ -1,40 +1,39 @@
-# Material UI - Create React App example in TypeScript
+# Eric React Template
+This is an enhanced React Typescript template, initially based on the [MUI Free Dashboard Template](https://github.com/mui/material-ui/tree/v5.15.12/docs/data/material/getting-started/templates/dashboard). 
 
-## How to use
+I have added several additional features:
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+- Side Panel app page routing
+- React Redux store for state management
+- A basic login page
+- MUI Theme implementation with light and dark mode switching
 
-<!-- #default-branch-switch -->
+## Getting Started
+
+To use this template, you can either download it directly or clone the repository from [here](https://github.com/onlineeric/eric-react-template.git).
+
+Once you have the template, follow these steps to get it up and running:
 
 ```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/material-ui-cra-ts
-cd material-ui-cra-ts
+npm install  # Install the necessary dependencies
+npm start    # Start the development server
 ```
 
-Install it and run:
+## About this template
 
-```bash
-npm install
-npm start
-```
+This template uses Material UI with [Create React App](https://github.com/facebookincubator/create-react-app) in [TypeScript](https://github.com/Microsoft/TypeScript). It includes several key packages:
 
-or:
+- `@mui/material`: Material UI's core components
+- [Emotion](https://emotion.sh/docs/introduction): The default style engine in Material UI v5
+- [React-Redux](https://react-redux.js.org/): A state management tool that allows for efficient data flow in your application
+- [ESLint](https://eslint.org/): A tool for identifying and reporting on patterns in JavaScript
+- [Prettier](https://prettier.io/): An opinionated code formatter
 
-<!-- #default-branch-switch -->
+These packages, along with their peer dependencies, are all included, providing a robust foundation for your React project.
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/material-ui/tree/master/examples/material-ui-cra-ts)
+ESLint and Prettier are integrated to ensure consistent code formatting and to help identify potential issues early in the development process.
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-cra-ts)
+## The idea behind the template
+In my demo project, available on [my Github page](https://github.com/onlineeric), I aim to use a React Single Page App as the UI to showcase my skills.
 
-## The idea behind the example
-
-This example demonstrates how you can use Material UI with [Create React App](https://github.com/facebookincubator/create-react-app) in [TypeScript](https://github.com/Microsoft/TypeScript).
-It includes `@mui/material` and its peer dependencies, including [Emotion](https://emotion.sh/docs/introduction), the default style engine in Material UI v5.
-If you prefer, you can [use styled-components instead](https://mui.com/material-ui/guides/interoperability/#styled-components).
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation and continue by browsing the [templates](https://mui.com/material-ui/getting-started/templates/) section.
+This template serves as a base from which I plan to add more features. It's an ideal starting point for any new React project.
