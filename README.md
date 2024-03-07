@@ -37,3 +37,11 @@ ESLint and Prettier are integrated to ensure consistent code formatting and to h
 In my demo project, available on [my Github page](https://github.com/onlineeric), I aim to use a React Single Page App as the UI to showcase my skills.
 
 This template serves as a base from which I plan to add more features. It's an ideal starting point for any new React project.
+
+## Demo Site
+
+You can view a live demo of a project built using this template at the following link: [Demo Site](https://proud-ground-0f99e0a00.5.azurestaticapps.net/)
+
+Here's a screenshot of the demo site:
+
+![Demo Site Screenshot](public/Eric%20React%20Template%20-%20screenshot.png)
