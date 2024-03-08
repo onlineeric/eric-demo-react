@@ -1,7 +1,12 @@
 # Eric React Template
 This is an enhanced React Typescript template, initially based on the [MUI Free Dashboard Template](https://github.com/mui/material-ui/tree/v5.15.12/docs/data/material/getting-started/templates/dashboard). 
 
-I have added several additional features:
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=flat)
+![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?logo=typescript&logoColor=white&style=flat)
+![Redux](https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white&style=flat)
+![Material-UI](https://img.shields.io/badge/-Material--UI-0081CB?logo=material-ui&logoColor=white&style=flat)
+
+## Added features
 
 - Side Panel app page routing
 - React Redux store for state management
