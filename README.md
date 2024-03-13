@@ -47,7 +47,7 @@ This template serves as a base from which I plan to add more features. It's an i
 
 ## Demo Site
 
-You can view a live demo of a project built using this template at my [Demo Site](https://proud-ground-0f99e0a00.5.azurestaticapps.net/)
+You can view a live demo of a project built using this template at my [Eric React Template Demo](https://proud-ground-0f99e0a00.5.azurestaticapps.net/)
 
 Here's a screenshot of the demo site:
 
