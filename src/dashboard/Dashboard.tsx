@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import Paper from '@mui/material/Paper';
 import Chart from './Chart';
 import Deposits from './Deposits';
@@ -10,7 +10,7 @@ export default function Dashboard() {
 	return (
 		<Grid container spacing={3}>
 			{/* Chart */}
-			<Grid item xs={12} md={8} lg={9}>
+			<Grid size={{ xs: 12, md: 8, lg: 9 }}>
 				<Paper
 					sx={{
 						p: 2,
@@ -23,7 +23,7 @@ export default function Dashboard() {
 				</Paper>
 			</Grid>
 			{/* Recent Deposits */}
-			<Grid item xs={12} md={4} lg={3}>
+			<Grid size={{ xs: 12, md: 4, lg: 3 }}>
 				<Paper
 					sx={{
 						p: 2,
@@ -36,13 +36,13 @@ export default function Dashboard() {
 				</Paper>
 			</Grid>
 			{/* Recent Orders */}
-			<Grid item xs={12}>
+			<Grid size={{ xs: 12 }}>
 				<Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
 					<RecentOrders />
 				</Paper>
 			</Grid>
 			{/* Counter */}
-			<Grid item xs={12}>
+			<Grid size={{ xs: 12 }}>
 				<Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
 					<Counter />
 				</Paper>
