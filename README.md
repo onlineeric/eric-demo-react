@@ -22,8 +22,8 @@ To use this template, you can either download it directly or clone the repositor
 Once you have the template, follow these steps to get it up and running:
 
 ```bash
-npm install  # Install the necessary dependencies
-npm start    # Start the development server
+yarn install  # Install the necessary dependencies
+yarn start    # Start the development server
 ```
 
 ## About this template
